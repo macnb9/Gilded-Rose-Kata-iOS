@@ -54,4 +54,11 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = gildedRose?.items[indexPath.row].name ?? "No Item Found"
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = gildedRose?.items[indexPath.row] else { return }
+        let itemViewController = ItemViewController(nibName: "ItemViewController", bundle: Bundle.main)
+        itemViewController.item = item
+        navigationController?.pushViewController(itemViewController, animated: true)
+    }
 }
