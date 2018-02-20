@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GildedRoseViewController.swift
 //  Gilded Rose Kata
 //
 //  Created by Blake Macnair on 2/20/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GildedRoseViewController: UIViewController {
     
     private var gildedRose: GildedRose?
 

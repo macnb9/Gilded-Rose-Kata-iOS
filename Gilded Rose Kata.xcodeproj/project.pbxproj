@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB3B6760203C8A47002E85D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B675F203C8A47002E85D3 /* AppDelegate.swift */; };
-		DB3B6762203C8A47002E85D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6761203C8A47002E85D3 /* ViewController.swift */; };
+		DB3B6762203C8A47002E85D3 /* GildedRoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */; };
 		DB3B6765203C8A47002E85D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6763203C8A47002E85D3 /* Main.storyboard */; };
 		DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6766203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld */; };
 		DB3B676A203C8A47002E85D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6769203C8A47002E85D3 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		DB3B675C203C8A47002E85D3 /* Gilded Rose Kata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gilded Rose Kata.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3B675F203C8A47002E85D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB3B6761203C8A47002E85D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRoseViewController.swift; sourceTree = "<group>"; };
 		DB3B6764203C8A47002E85D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB3B6767203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gilded_Rose_Kata.xcdatamodel; sourceTree = "<group>"; };
 		DB3B6769203C8A47002E85D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DB3B675F203C8A47002E85D3 /* AppDelegate.swift */,
-				DB3B6761203C8A47002E85D3 /* ViewController.swift */,
+				DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */,
 				DB3B6763203C8A47002E85D3 /* Main.storyboard */,
 				DB3B6769203C8A47002E85D3 /* Assets.xcassets */,
 				DB3B676B203C8A47002E85D3 /* LaunchScreen.storyboard */,
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3B6785203C8A90002E85D3 /* Item.swift in Sources */,
-				DB3B6762203C8A47002E85D3 /* ViewController.swift in Sources */,
+				DB3B6762203C8A47002E85D3 /* GildedRoseViewController.swift in Sources */,
 				DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */,
 				DB3B6760203C8A47002E85D3 /* AppDelegate.swift in Sources */,
 				DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */,
