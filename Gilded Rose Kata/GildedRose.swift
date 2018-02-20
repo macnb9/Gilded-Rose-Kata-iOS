@@ -9,5 +9,13 @@
 import UIKit
 
 class GildedRose: NSObject {
-
+    var items: [Item]
+    
+    required init(items: [Item]) {
+        self.items = items
+    }
+    
+    public func updateQuality() {
+        // TODO: Write some crappy logic to be fixed here
+    }
 }
