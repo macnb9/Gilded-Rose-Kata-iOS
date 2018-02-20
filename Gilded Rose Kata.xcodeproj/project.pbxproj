@@ -15,6 +15,8 @@
 		DB3B676D203C8A47002E85D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B676B203C8A47002E85D3 /* LaunchScreen.storyboard */; };
 		DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6782203C8A7B002E85D3 /* GildedRose.swift */; };
 		DB3B6785203C8A90002E85D3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6784203C8A90002E85D3 /* Item.swift */; };
+		DB3B6788203CA7B1002E85D3 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */; };
+		DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		DB3B6779203C8A47002E85D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3B6782203C8A7B002E85D3 /* GildedRose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRose.swift; sourceTree = "<group>"; };
 		DB3B6784203C8A90002E85D3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */,
 				DB3B6782203C8A7B002E85D3 /* GildedRose.swift */,
 				DB3B6784203C8A90002E85D3 /* Item.swift */,
+				DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */,
+				DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */,
 				DB3B6763203C8A47002E85D3 /* Main.storyboard */,
 				DB3B6769203C8A47002E85D3 /* Assets.xcassets */,
 				DB3B676B203C8A47002E85D3 /* LaunchScreen.storyboard */,
@@ -186,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3B676D203C8A47002E85D3 /* LaunchScreen.storyboard in Resources */,
+				DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */,
 				DB3B676A203C8A47002E85D3 /* Assets.xcassets in Resources */,
 				DB3B6765203C8A47002E85D3 /* Main.storyboard in Resources */,
 			);
@@ -210,6 +217,7 @@
 				DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */,
 				DB3B6760203C8A47002E85D3 /* AppDelegate.swift in Sources */,
 				DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */,
+				DB3B6788203CA7B1002E85D3 /* ItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
