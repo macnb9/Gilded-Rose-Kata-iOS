@@ -13,7 +13,6 @@
 		DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6766203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld */; };
 		DB3B676A203C8A47002E85D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6769203C8A47002E85D3 /* Assets.xcassets */; };
 		DB3B676D203C8A47002E85D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B676B203C8A47002E85D3 /* LaunchScreen.storyboard */; };
-		DB3B6778203C8A47002E85D3 /* Gilded_Rose_KataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6777203C8A47002E85D3 /* Gilded_Rose_KataTests.swift */; };
 		DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6782203C8A7B002E85D3 /* GildedRose.swift */; };
 		DB3B6785203C8A90002E85D3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6784203C8A90002E85D3 /* Item.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		DB3B676C203C8A47002E85D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3B676E203C8A47002E85D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3B6773203C8A47002E85D3 /* Gilded Rose KataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gilded Rose KataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB3B6777203C8A47002E85D3 /* Gilded_Rose_KataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gilded_Rose_KataTests.swift; sourceTree = "<group>"; };
 		DB3B6779203C8A47002E85D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3B6782203C8A7B002E85D3 /* GildedRose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRose.swift; sourceTree = "<group>"; };
 		DB3B6784203C8A90002E85D3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -85,13 +83,13 @@
 			children = (
 				DB3B675F203C8A47002E85D3 /* AppDelegate.swift */,
 				DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */,
+				DB3B6782203C8A7B002E85D3 /* GildedRose.swift */,
+				DB3B6784203C8A90002E85D3 /* Item.swift */,
 				DB3B6763203C8A47002E85D3 /* Main.storyboard */,
 				DB3B6769203C8A47002E85D3 /* Assets.xcassets */,
 				DB3B676B203C8A47002E85D3 /* LaunchScreen.storyboard */,
 				DB3B676E203C8A47002E85D3 /* Info.plist */,
 				DB3B6766203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld */,
-				DB3B6782203C8A7B002E85D3 /* GildedRose.swift */,
-				DB3B6784203C8A90002E85D3 /* Item.swift */,
 			);
 			path = "Gilded Rose Kata";
 			sourceTree = "<group>";
@@ -99,7 +97,6 @@
 		DB3B6776203C8A47002E85D3 /* Gilded Rose KataTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB3B6777203C8A47002E85D3 /* Gilded_Rose_KataTests.swift */,
 				DB3B6779203C8A47002E85D3 /* Info.plist */,
 			);
 			path = "Gilded Rose KataTests";
@@ -220,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3B6778203C8A47002E85D3 /* Gilded_Rose_KataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
