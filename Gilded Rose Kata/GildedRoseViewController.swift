@@ -10,6 +10,7 @@ import UIKit
 
 class GildedRoseViewController: UIViewController {
     
+    @IBOutlet private var tableView: UITableView!
     private var gildedRose: GildedRose?
 
     override func viewDidLoad() {
