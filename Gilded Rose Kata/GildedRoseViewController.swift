@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class GildedRoseViewController: UIViewController {
 
     @IBOutlet private var tableView: UITableView!
     private var gildedRose: GildedRose?
+    
+    private var frc: NSFetchedResultsController<NSFetchRequestResult>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,22 +38,39 @@ class GildedRoseViewController: UIViewController {
         tableView.register(UINib(nibName: "ItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ItemTableViewCell")
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-
+        
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let sort = NSSortDescriptor(keyPath: \Item.name, ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: AppDelegate.shared.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        frc?.delegate = self
         setupGildedRose()
+        
+        do {
+            try frc?.performFetch()
+        } catch {
+            print(error)
+        }
     }
 
     /// Initializes the gildedRose property and adds some default items to it
     private func setupGildedRose() {
+        let createContext = AppDelegate.shared.persistentContainer.viewContext
+
         let items = [
-            Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
-            Item(name: "Aged Brie", sellIn: 2, quality: 0),
-            Item(name: "Elixir of the Mongoose", sellIn: 5, quality: 7),
-            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80),
-            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: -1, quality: 80),
-            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 20),
-            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 10, quality: 49),
-            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 5, quality: 49),
-            Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6)]
+            Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20, insertInto: createContext),
+            Item(name: "Aged Brie", sellIn: 2, quality: 0, insertInto: createContext),
+            Item(name: "Elixir of the Mongoose", sellIn: 5, quality: 7, insertInto: createContext),
+            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80, insertInto: createContext),
+            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: -1, quality: 80, insertInto: createContext),
+            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 20, insertInto: createContext),
+            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 10, quality: 49, insertInto: createContext),
+            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 5, quality: 49, insertInto: createContext),
+            Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6, insertInto: createContext)
+        ]
+        
+        AppDelegate.shared.saveContext()
 
         gildedRose = GildedRose(items: items)
     }
@@ -75,11 +95,11 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gildedRose?.items.count ?? 0
+        return frc?.fetchedObjects?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell, let item = gildedRose?.items[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell, let item = frc?.fetchedObjects?[indexPath.row] as? Item else {
             return UITableViewCell()
         }
         
@@ -92,7 +112,7 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = gildedRose?.items[indexPath.row] else { return }
+        guard let item = frc?.fetchedObjects?[indexPath.row] as? Item else { return }
         let itemViewController = ItemViewController(nibName: "ItemViewController", bundle: Bundle.main)
         itemViewController.item = item
         navigationController?.pushViewController(itemViewController, animated: true)
@@ -102,6 +122,12 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
 extension GildedRoseViewController: AddItemViewControllerDelegate {
     func addItemViewControllerDidCreate(newItem: Item) {
         gildedRose?.items.append(newItem)
+        tableView.reloadData()
+    }
+}
+
+extension GildedRoseViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
 }

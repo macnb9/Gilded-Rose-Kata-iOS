@@ -15,11 +15,11 @@ protocol AddItemViewControllerDelegate: class {
 }
 
 class AddItemViewController: UIViewController {
-    
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var sellinTextField: UITextField!
     @IBOutlet weak var qualityTextField: UITextField!
-    
+
     weak var delegate: AddItemViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -31,9 +31,9 @@ class AddItemViewController: UIViewController {
                                                  target: self,
                                                  action: #selector(createAndDismiss))
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        
+
         rightBarButtonItem.isEnabled = false
-        
+
         hookUpTextFields()
     }
     
@@ -45,22 +45,31 @@ class AddItemViewController: UIViewController {
     }
 
     @objc private func createAndDismiss() {
+        let createContext = AppDelegate.shared.persistentContainer.viewContext
+
         let newItem = Item(name: nameTextField.text ?? "",
                            sellIn: Int(sellinTextField.text ?? "0") ?? 0,
-                           quality: Int(qualityTextField.text ?? "0") ?? 0)
-        
+                           quality: Int(qualityTextField.text ?? "0") ?? 0,
+                           insertInto: createContext)
+
+        do {
+            try createContext.save()
+        } catch {
+            print(error)
+        }
+
         delegate?.addItemViewControllerDidCreate(newItem: newItem)
-        
+
         guard let navigationController = navigationController else {
             return
         }
 
         navigationController.popViewController(animated: true)
     }
-    
+
     private func isValid() -> Bool {
         guard let name = nameTextField.text, let sellin = sellinTextField.text, let quality = qualityTextField.text else { return false }
-        
+
         return !name.trimmingCharacters(in: .whitespaces).isEmpty
             && !sellin.trimmingCharacters(in: .whitespaces).isEmpty
             && !quality.trimmingCharacters(in: .whitespaces).isEmpty
