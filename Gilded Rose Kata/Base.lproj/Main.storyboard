@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-262" y="521"/>
         </scene>
-        <!--Gilded Rose View Controller-->
+        <!--Gilded Rose-->
         <scene sceneID="5u3-g2-Ryl">
             <objects>
                 <viewController id="qVV-V7-biP" customClass="GildedRoseViewController" customModule="Gilded_Rose_Kata" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gGJ-PI-rAy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bwQ-wR-kCv"/>
+                    <navigationItem key="navigationItem" title="Gilded Rose" id="8lX-T3-ERQ"/>
                     <connections>
                         <outlet property="tableView" destination="eL7-oz-XaY" id="xaR-Et-hhy"/>
                     </connections>
