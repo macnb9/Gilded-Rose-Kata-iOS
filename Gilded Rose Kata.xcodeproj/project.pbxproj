@@ -17,6 +17,8 @@
 		DB3B6785203C8A90002E85D3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6784203C8A90002E85D3 /* Item.swift */; };
 		DB3B6788203CA7B1002E85D3 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */; };
 		DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */; };
+		DBED39A12048F5AC002A9C5F /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */; };
+		DBED39A22048F5AC002A9C5F /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		DB3B6784203C8A90002E85D3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
+		DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			children = (
 				DB3B675F203C8A47002E85D3 /* AppDelegate.swift */,
 				DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */,
+				DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */,
+				DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */,
 				DB3B6782203C8A7B002E85D3 /* GildedRose.swift */,
 				DB3B6784203C8A90002E85D3 /* Item.swift */,
 				DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */,
@@ -193,6 +199,7 @@
 			files = (
 				DB3B676D203C8A47002E85D3 /* LaunchScreen.storyboard in Resources */,
 				DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */,
+				DBED39A22048F5AC002A9C5F /* AddItemViewController.xib in Resources */,
 				DB3B676A203C8A47002E85D3 /* Assets.xcassets in Resources */,
 				DB3B6765203C8A47002E85D3 /* Main.storyboard in Resources */,
 			);
@@ -216,6 +223,7 @@
 				DB3B6762203C8A47002E85D3 /* GildedRoseViewController.swift in Sources */,
 				DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */,
 				DB3B6760203C8A47002E85D3 /* AppDelegate.swift in Sources */,
+				DBED39A12048F5AC002A9C5F /* AddItemViewController.swift in Sources */,
 				DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */,
 				DB3B6788203CA7B1002E85D3 /* ItemViewController.swift in Sources */,
 			);

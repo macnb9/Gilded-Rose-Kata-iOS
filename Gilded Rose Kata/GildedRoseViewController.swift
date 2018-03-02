@@ -19,6 +19,11 @@ class GildedRoseViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                          target: self,
+                                          action: #selector(addItem))
+        navigationItem.rightBarButtonItem = rightButton
+        
         setupGildedRose()
     }
 
@@ -35,6 +40,11 @@ class GildedRoseViewController: UIViewController {
             Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6)]
 
         gildedRose = GildedRose(items: items)
+    }
+    
+    @objc private func addItem() {
+        let addItemViewController = AddItemViewController(nibName: "AddItemViewController", bundle: Bundle.main)
+        navigationController?.pushViewController(addItemViewController, animated: true)
     }
 }
 
