@@ -21,6 +21,8 @@
 		DBED39A22048F5AC002A9C5F /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */; };
 		DBED39A52048FD2D002A9C5F /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED39A32048FD2D002A9C5F /* ItemTableViewCell.swift */; };
 		DBED39A62048FD2D002A9C5F /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBED39A42048FD2D002A9C5F /* ItemTableViewCell.xib */; };
+		DBED39A920499DF1002A9C5F /* GildedRoseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED39A820499DF1002A9C5F /* GildedRoseTest.swift */; };
+		DBED39AB20499E3E002A9C5F /* ItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED39AA20499E3E002A9C5F /* ItemTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 		DBED39A32048FD2D002A9C5F /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		DBED39A42048FD2D002A9C5F /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		DBED39A820499DF1002A9C5F /* GildedRoseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRoseTest.swift; sourceTree = "<group>"; };
+		DBED39AA20499E3E002A9C5F /* ItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTest.swift; sourceTree = "<group>"; };
+		DBED39AC20499EA5002A9C5F /* Gilded Rose KataTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Gilded Rose KataTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				DB3B6779203C8A47002E85D3 /* Info.plist */,
+				DBED39AC20499EA5002A9C5F /* Gilded Rose KataTests-Bridging-Header.h */,
+				DBED39A820499DF1002A9C5F /* GildedRoseTest.swift */,
+				DBED39AA20499E3E002A9C5F /* ItemTest.swift */,
 			);
 			path = "Gilded Rose KataTests";
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 					};
 					DB3B6772203C8A47002E85D3 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DB3B675B203C8A47002E85D3;
 					};
@@ -241,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBED39AB20499E3E002A9C5F /* ItemTest.swift in Sources */,
+				DBED39A920499DF1002A9C5F /* GildedRoseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,12 +427,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCSX5KABFK;
 				INFOPLIST_FILE = "Gilded Rose KataTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "macnair.Gilded-Rose-KataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gilded Rose KataTests/Gilded Rose KataTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gilded Rose Kata.app/Gilded Rose Kata";
@@ -433,12 +447,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PCSX5KABFK;
 				INFOPLIST_FILE = "Gilded Rose KataTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "macnair.Gilded-Rose-KataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gilded Rose KataTests/Gilded Rose KataTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gilded Rose Kata.app/Gilded Rose Kata";
