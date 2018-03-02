@@ -7,17 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
-class Item: NSObject {
-    public var name: String
-    public var sellIn: Int // TODO: Change to Date or TimeInterval?
-    public var quality: Int
+@objc(Item)
+class Item: NSManagedObject {
+    @NSManaged public var name: String
+    @NSManaged private var sellInNum: NSNumber // TODO: Change to Date or TimeInterval?
+    @NSManaged private var qualityNum: NSNumber
+    
+    public var sellIn: Int {
+        get {
+        return sellInNum.intValue
+        }
+        set {
+            sellInNum = NSNumber(value: newValue)
+        }
+        }
+    public var quality: Int {
+        get {
+            return qualityNum.intValue
+        }
+        set {
+            qualityNum = NSNumber(value: newValue)
+        }
+    }
     
     override public var description: String {
         return String(format: "%@, %@, %@", name, sellIn, quality)
     }
     
-    init(name: String, sellIn: Int, quality: Int) {
+    convenience init(name: String, sellIn: Int, quality: Int, insertInto moc: NSManagedObjectContext) {
+        let entity = NSEntityDescription.entity(forEntityName: "Item", in: moc)!
+        self.init(entity: entity, insertInto: moc)
         self.name = name
         self.sellIn = sellIn
         self.quality = quality
