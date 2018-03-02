@@ -66,6 +66,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func deleteAll() {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
+        do {
+            try context.persistentStoreCoordinator?.execute(deleteRequest, with: context)
+        } catch let error {
+            print(error)
+        }
+    }
 }
 

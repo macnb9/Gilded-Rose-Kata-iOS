@@ -18,6 +18,8 @@ class GildedRoseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppDelegate.shared.deleteAll()
 
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add,
                                           target: self,
@@ -116,6 +118,7 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
         let itemViewController = ItemViewController(nibName: "ItemViewController", bundle: Bundle.main)
         itemViewController.item = item
         navigationController?.pushViewController(itemViewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
