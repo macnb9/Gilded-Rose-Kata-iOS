@@ -19,6 +19,8 @@
 		DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */; };
 		DBED39A12048F5AC002A9C5F /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */; };
 		DBED39A22048F5AC002A9C5F /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */; };
+		DBED39A52048FD2D002A9C5F /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED39A32048FD2D002A9C5F /* ItemTableViewCell.swift */; };
+		DBED39A62048FD2D002A9C5F /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBED39A42048FD2D002A9C5F /* ItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
 		DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
+		DBED39A32048FD2D002A9C5F /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		DBED39A42048FD2D002A9C5F /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +95,12 @@
 			children = (
 				DB3B675F203C8A47002E85D3 /* AppDelegate.swift */,
 				DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */,
-				DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */,
-				DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */,
 				DB3B6782203C8A7B002E85D3 /* GildedRose.swift */,
 				DB3B6784203C8A90002E85D3 /* Item.swift */,
+				DBED399F2048F5AC002A9C5F /* AddItemViewController.swift */,
+				DBED39A02048F5AC002A9C5F /* AddItemViewController.xib */,
+				DBED39A32048FD2D002A9C5F /* ItemTableViewCell.swift */,
+				DBED39A42048FD2D002A9C5F /* ItemTableViewCell.xib */,
 				DB3B6786203CA7B1002E85D3 /* ItemViewController.swift */,
 				DB3B6787203CA7B1002E85D3 /* ItemViewController.xib */,
 				DB3B6763203C8A47002E85D3 /* Main.storyboard */,
@@ -201,6 +207,7 @@
 				DB3B6789203CA7B1002E85D3 /* ItemViewController.xib in Resources */,
 				DBED39A22048F5AC002A9C5F /* AddItemViewController.xib in Resources */,
 				DB3B676A203C8A47002E85D3 /* Assets.xcassets in Resources */,
+				DBED39A62048FD2D002A9C5F /* ItemTableViewCell.xib in Resources */,
 				DB3B6765203C8A47002E85D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +230,7 @@
 				DB3B6762203C8A47002E85D3 /* GildedRoseViewController.swift in Sources */,
 				DB3B6783203C8A7B002E85D3 /* GildedRose.swift in Sources */,
 				DB3B6760203C8A47002E85D3 /* AppDelegate.swift in Sources */,
+				DBED39A52048FD2D002A9C5F /* ItemTableViewCell.swift in Sources */,
 				DBED39A12048F5AC002A9C5F /* AddItemViewController.swift in Sources */,
 				DB3B6768203C8A47002E85D3 /* Gilded_Rose_Kata.xcdatamodeld in Sources */,
 				DB3B6788203CA7B1002E85D3 /* ItemViewController.swift in Sources */,
