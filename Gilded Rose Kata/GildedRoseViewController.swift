@@ -39,6 +39,7 @@ class GildedRoseViewController: UIViewController {
         setupGildedRose()
     }
 
+    /// Initializes the gildedRose property and adds some default items to it
     private func setupGildedRose() {
         let items = [
             Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20),
@@ -54,12 +55,14 @@ class GildedRoseViewController: UIViewController {
         gildedRose = GildedRose(items: items)
     }
     
+    /// Initializes and presents a view for creating a new item to add to the Gilded Rose
     @objc private func addItem() {
         let addItemViewController = AddItemViewController(nibName: "AddItemViewController", bundle: Bundle.main)
         addItemViewController.delegate = self
         navigationController?.pushViewController(addItemViewController, animated: true)
     }
     
+    /// Runs GildedRose().updateQuality and refreshes the table to show the new values
     @objc private func updateQuality() {
         gildedRose?.updateQuality()
         tableView.reloadData()

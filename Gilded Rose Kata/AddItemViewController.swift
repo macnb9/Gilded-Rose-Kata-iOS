@@ -9,6 +9,8 @@
 import UIKit
 
 protocol AddItemViewControllerDelegate: class {
+    /// Tells the delegate when the AddItemViewController has finished creating a new Item.
+    /// - Parameter newItem: The new item that was created
     func addItemViewControllerDidCreate(newItem: Item)
 }
 
@@ -35,6 +37,7 @@ class AddItemViewController: UIViewController {
         hookUpTextFields()
     }
     
+    /// Hooks up the textFieldDidChange method to the three text fields in this view controller so we can pcik up any text changes
     func hookUpTextFields() {
         nameTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
         sellinTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)

@@ -15,6 +15,7 @@ class GildedRose: NSObject {
         self.items = items
     }
     
+    /// Updates the quality of each item in the Gilded Rose by a one-day increment
     public func updateQuality() {
         for i in 0..<items.count {
             if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert") {
