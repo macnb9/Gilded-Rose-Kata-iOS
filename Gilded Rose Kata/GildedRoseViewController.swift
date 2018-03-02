@@ -9,21 +9,33 @@
 import UIKit
 
 class GildedRoseViewController: UIViewController {
-    
+
     @IBOutlet private var tableView: UITableView!
     private var gildedRose: GildedRose?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add,
                                           target: self,
                                           action: #selector(addItem))
         navigationItem.rightBarButtonItem = rightButton
         
+        let leftButton = UIBarButtonItem(title: "Next Day",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(updateQuality))
+        navigationItem.leftBarButtonItem = leftButton
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableView.tableFooterView = UIView()
+        
+        tableView.register(UINib(nibName: "ItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ItemTableViewCell")
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+
         setupGildedRose()
     }
 
@@ -46,29 +58,45 @@ class GildedRoseViewController: UIViewController {
         let addItemViewController = AddItemViewController(nibName: "AddItemViewController", bundle: Bundle.main)
         navigationController?.pushViewController(addItemViewController, animated: true)
     }
+    
+    @objc private func updateQuality() {
+        gildedRose?.updateQuality()
+    }
 }
 
 extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gildedRose?.items.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell, let item = gildedRose?.items[indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(for: item)
+        
+        return cell
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = gildedRose?.items[indexPath.row].name ?? "No Item Found"
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = gildedRose?.items[indexPath.row] else { return }
         let itemViewController = ItemViewController(nibName: "ItemViewController", bundle: Bundle.main)
         itemViewController.item = item
         navigationController?.pushViewController(itemViewController, animated: true)
+    }
+}
+
+extension GildedRoseViewController: AddItemViewControllerDelegate {
+    func addItemViewControllerDidCreate(newItem: Item) {
+        gildedRose?.items.append(newItem)
+        tableView.reloadData()
     }
 }
