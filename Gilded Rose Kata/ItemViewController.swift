@@ -24,7 +24,7 @@ class ItemViewController: UIViewController {
     
     private func configure(for item: Item) {
         itemTitleLabel.text = item.name
-        sellInDateLabel.text = "\(item.sellIn)"
+        sellInDateLabel.text = item.sellInString
         qualityLabel.text = "\(item.quality)"
     }
 

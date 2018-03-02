@@ -32,6 +32,16 @@ class Item: NSManagedObject {
         }
     }
     
+    public var sellInString: String {
+        if sellIn == 0 {
+            return "Today"
+        } else  if sellIn < 0 {
+            return "\(-sellIn) days ago"
+        } else {
+            return "\(sellIn) days left"
+        }
+    }
+    
     override public var description: String {
         return String(format: "%@, %@, %@", name, sellIn, quality)
     }

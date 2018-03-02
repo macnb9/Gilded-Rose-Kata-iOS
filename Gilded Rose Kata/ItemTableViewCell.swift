@@ -17,6 +17,6 @@ class ItemTableViewCell: UITableViewCell {
     func configure(for item: Item) {
         titleLabel.text = item.name
         qualityLabel.text = "\(item.quality)"
-        sellinLabel.text = "\(item.sellIn)"
+        sellinLabel.text = item.sellInString
     }
 }
