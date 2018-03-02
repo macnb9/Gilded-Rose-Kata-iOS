@@ -56,11 +56,13 @@ class GildedRoseViewController: UIViewController {
     
     @objc private func addItem() {
         let addItemViewController = AddItemViewController(nibName: "AddItemViewController", bundle: Bundle.main)
+        addItemViewController.delegate = self
         navigationController?.pushViewController(addItemViewController, animated: true)
     }
     
     @objc private func updateQuality() {
         gildedRose?.updateQuality()
+        tableView.reloadData()
     }
 }
 
