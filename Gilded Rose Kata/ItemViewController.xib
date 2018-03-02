@@ -37,13 +37,25 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SellIn Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMQ-BQ-apJ">
-                    <rect key="frame" x="16" y="219" width="343" height="21"/>
+                    <rect key="frame" x="84" y="219" width="275" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQW-eO-ti1">
-                    <rect key="frame" x="16" y="248" width="343" height="21"/>
+                    <rect key="frame" x="87" y="248" width="272" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Sell by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5S-cm-BmN">
+                    <rect key="frame" x="16" y="219" width="60" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Quality: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-Wf-VOe">
+                    <rect key="frame" x="16" y="248" width="63" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -52,12 +64,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="r91-e5-akG" firstAttribute="top" secondItem="ssk-J3-eJy" secondAttribute="bottom" constant="8" id="1Gf-qE-PtE"/>
+                <constraint firstItem="W5e-Wf-VOe" firstAttribute="top" secondItem="p5S-cm-BmN" secondAttribute="bottom" constant="8" id="BZh-1P-ROg"/>
                 <constraint firstItem="ssk-J3-eJy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="D08-Nk-g0R"/>
+                <constraint firstItem="p5S-cm-BmN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="D0g-aP-FSs"/>
+                <constraint firstItem="W5e-Wf-VOe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GdJ-QE-Lfr"/>
+                <constraint firstItem="KQW-eO-ti1" firstAttribute="leading" secondItem="W5e-Wf-VOe" secondAttribute="trailing" constant="8" id="IeK-HM-c8Y"/>
                 <constraint firstItem="KQW-eO-ti1" firstAttribute="top" secondItem="CMQ-BQ-apJ" secondAttribute="bottom" constant="8" id="L0k-gx-Ox0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CMQ-BQ-apJ" secondAttribute="trailing" constant="16" id="Mr1-M8-ddv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ssk-J3-eJy" secondAttribute="trailing" constant="16" id="NhM-1e-4fh"/>
-                <constraint firstItem="CMQ-BQ-apJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QJw-Tw-HIv"/>
-                <constraint firstItem="KQW-eO-ti1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gno-ta-7FQ"/>
+                <constraint firstItem="CMQ-BQ-apJ" firstAttribute="leading" secondItem="p5S-cm-BmN" secondAttribute="trailing" constant="8" id="exY-pp-k1g"/>
+                <constraint firstItem="p5S-cm-BmN" firstAttribute="top" secondItem="r91-e5-akG" secondAttribute="bottom" constant="8" id="hlB-RV-uZU"/>
                 <constraint firstItem="CMQ-BQ-apJ" firstAttribute="top" secondItem="r91-e5-akG" secondAttribute="bottom" constant="8" id="nWR-SN-GDg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r91-e5-akG" secondAttribute="trailing" constant="16" id="or6-2m-o0Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KQW-eO-ti1" secondAttribute="trailing" constant="16" id="v6y-eE-Axc"/>

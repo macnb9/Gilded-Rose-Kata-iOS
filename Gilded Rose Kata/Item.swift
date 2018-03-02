@@ -36,9 +36,9 @@ class Item: NSManagedObject {
         if sellIn == 0 {
             return "Today"
         } else  if sellIn < 0 {
-            return "\(-sellIn) days ago"
+            return "\(abs(sellIn)) day\(abs(sellIn) == 1 ? "" : "s") ago"
         } else {
-            return "\(sellIn) days left"
+            return "\(sellIn) day\(abs(sellIn) == 1 ? "" : "s") left"
         }
     }
     
