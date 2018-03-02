@@ -31,6 +31,14 @@ class AddItemViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
         rightBarButtonItem.isEnabled = false
+        
+        hookUpTextFields()
+    }
+    
+    func hookUpTextFields() {
+        nameTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
+        sellinTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
+        qualityTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
     }
 
     @objc private func createAndDismiss() {
@@ -46,11 +54,19 @@ class AddItemViewController: UIViewController {
 
         navigationController.popViewController(animated: true)
     }
+    
+    private func isValid() -> Bool {
+        guard let name = nameTextField.text, let sellin = sellinTextField.text, let quality = qualityTextField.text else { return false }
+        
+        return !name.trimmingCharacters(in: .whitespaces).isEmpty
+            && !sellin.trimmingCharacters(in: .whitespaces).isEmpty
+            && !quality.trimmingCharacters(in: .whitespaces).isEmpty
+    }
 }
 
 extension AddItemViewController: UITextFieldDelegate {
     /// Captures text changes for text fields and sends the new text to the object manager
     @objc private func textFieldChanged(sender: UITextField?) {
-        
+        navigationItem.rightBarButtonItem?.isEnabled = isValid()
     }
 }
