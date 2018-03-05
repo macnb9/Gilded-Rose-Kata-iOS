@@ -36,12 +36,15 @@ class AddItemViewController: UIViewController {
 
         hookUpTextFields()
     }
-    
+
     /// Hooks up the textFieldDidChange method to the three text fields in this view controller so we can pcik up any text changes
     func hookUpTextFields() {
         nameTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
         sellinTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
         qualityTextField.addTarget(self, action: #selector(textFieldChanged), for: UIControlEvents.editingChanged)
+        nameTextField.delegate = self
+        sellinTextField.delegate = self
+        qualityTextField.delegate = self
     }
 
     @objc private func createAndDismiss() {
@@ -77,5 +80,18 @@ extension AddItemViewController: UITextFieldDelegate {
     /// Captures text changes for text fields and sends the new text to the object manager
     @objc private func textFieldChanged(sender: UITextField?) {
         navigationItem.rightBarButtonItem?.isEnabled = isValid()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Move to the next available cell then return
+        textField.resignFirstResponder()
+
+        if textField == nameTextField {
+            sellinTextField.becomeFirstResponder()
+        } else if textField == sellinTextField {
+            qualityTextField.becomeFirstResponder()
+        }
+
+        return true
     }
 }
