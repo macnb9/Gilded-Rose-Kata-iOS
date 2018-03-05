@@ -58,7 +58,7 @@ class GildedRoseViewController: UIViewController {
 
     /// Initializes the gildedRose property and adds some default items to it
     private func setupGildedRose() {
-        let createContext = AppDelegate.shared.persistentContainer.viewContext
+        let createContext = AppDelegate.shared.persistentContainer.newBackgroundContext()
 
         let items = [
             Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20, insertInto: createContext),
@@ -71,8 +71,8 @@ class GildedRoseViewController: UIViewController {
             Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 5, quality: 49, insertInto: createContext),
             Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6, insertInto: createContext)
         ]
-        
-        AppDelegate.shared.saveContext()
+
+        AppDelegate.shared.saveContext(createContext)
 
         gildedRose = GildedRose(items: items)
     }
@@ -83,7 +83,7 @@ class GildedRoseViewController: UIViewController {
         addItemViewController.delegate = self
         navigationController?.pushViewController(addItemViewController, animated: true)
     }
-    
+
     /// Runs GildedRose().updateQuality and refreshes the table to show the new values
     @objc private func updateQuality() {
         gildedRose?.updateQuality()
@@ -104,9 +104,9 @@ extension GildedRoseViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell, let item = frc?.fetchedObjects?[indexPath.row] as? Item else {
             return UITableViewCell()
         }
-        
+
         cell.configure(for: item)
-        
+
         return cell
     }
 
@@ -130,7 +130,8 @@ extension GildedRoseViewController: AddItemViewControllerDelegate {
 }
 
 extension GildedRoseViewController: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
+
 }

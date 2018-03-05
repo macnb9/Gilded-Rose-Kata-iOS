@@ -32,7 +32,7 @@ class GildedRoseTest: XCTestCase {
             Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6, insertInto: createContext)
         ]
 
-        AppDelegate.shared.saveContext()
+        AppDelegate.shared.saveContext(createContext)
         gildedRose = GildedRose(items: items!)
     }
     

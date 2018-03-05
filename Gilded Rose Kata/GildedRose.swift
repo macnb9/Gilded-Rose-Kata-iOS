@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GildedRose: NSObject {
     var items: [Item]
@@ -17,6 +18,16 @@ class GildedRose: NSObject {
     
     /// Updates the quality of each item in the Gilded Rose by a one-day increment
     public func updateQuality() {
+
+        var items: [Item] = []
+        let context = AppDelegate.shared.persistentContainer.newBackgroundContext()
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        do {
+            items = try context.fetch(request) as! [Item]
+        } catch {
+            print(error)
+        }
+
         for i in 0..<items.count {
             if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert") {
                 if (items[i].quality > 0) {

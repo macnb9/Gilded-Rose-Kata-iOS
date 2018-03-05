@@ -45,18 +45,15 @@ class AddItemViewController: UIViewController {
     }
 
     @objc private func createAndDismiss() {
-        let createContext = AppDelegate.shared.persistentContainer.viewContext
+        let createContext = AppDelegate.shared.persistentContainer.newBackgroundContext()
+        createContext.name = "Background"
 
         let newItem = Item(name: nameTextField.text ?? "",
                            sellIn: Int(sellinTextField.text ?? "0") ?? 0,
                            quality: Int(qualityTextField.text ?? "0") ?? 0,
                            insertInto: createContext)
 
-        do {
-            try createContext.save()
-        } catch {
-            print(error)
-        }
+        AppDelegate.shared.saveContext(createContext)
 
         delegate?.addItemViewControllerDidCreate(newItem: newItem)
 

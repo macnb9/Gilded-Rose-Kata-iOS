@@ -15,11 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     static var shared = UIApplication.shared.delegate as! AppDelegate
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave, object: nil, queue: nil) { notification in
+            guard let context = notification.object as? NSManagedObjectContext else { return }
+            
+            /*if context.name != nil {
+                if context.name == "background" {
+                    self.persistentContainer.viewContext.mergeChanges(fromContextDidSave: notification)
+                }
+            } else*/ if context != self.persistentContainer.viewContext {
+                self.persistentContainer.viewContext.mergeChanges(fromContextDidSave: notification)
+            }
+        }
     }
 
     // MARK: - Core Data stack
@@ -34,33 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "Gilded_Rose_Kata")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
         return container
     }()
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    func saveContext(_ context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
