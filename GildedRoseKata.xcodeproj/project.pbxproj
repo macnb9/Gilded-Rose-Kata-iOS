@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DB3B675C203C8A47002E85D3 /* Gilded Rose Kata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gilded Rose Kata.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3B675C203C8A47002E85D3 /* GildedRoseKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GildedRoseKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3B675F203C8A47002E85D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB3B6761203C8A47002E85D3 /* GildedRoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRoseViewController.swift; sourceTree = "<group>"; };
 		DB3B6764203C8A47002E85D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		DB3B6769203C8A47002E85D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3B676C203C8A47002E85D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3B676E203C8A47002E85D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB3B6773203C8A47002E85D3 /* Gilded Rose KataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gilded Rose KataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3B6773203C8A47002E85D3 /* GildedRoseKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GildedRoseKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3B6779203C8A47002E85D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3B6782203C8A7B002E85D3 /* GildedRose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildedRose.swift; sourceTree = "<group>"; };
 		DB3B6784203C8A90002E85D3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 		DB3B675D203C8A47002E85D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB3B675C203C8A47002E85D3 /* Gilded Rose Kata.app */,
-				DB3B6773203C8A47002E85D3 /* Gilded Rose KataTests.xctest */,
+				DB3B675C203C8A47002E85D3 /* GildedRoseKata.app */,
+				DB3B6773203C8A47002E85D3 /* GildedRoseKataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,9 +131,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB3B675B203C8A47002E85D3 /* Gilded Rose Kata */ = {
+		DB3B675B203C8A47002E85D3 /* GildedRoseKata */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB3B677C203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "Gilded Rose Kata" */;
+			buildConfigurationList = DB3B677C203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "GildedRoseKata" */;
 			buildPhases = (
 				DB3B6758203C8A47002E85D3 /* Sources */,
 				DB3B6759203C8A47002E85D3 /* Frameworks */,
@@ -143,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = "Gilded Rose Kata";
+			name = GildedRoseKata;
 			productName = "Gilded Rose Kata";
-			productReference = DB3B675C203C8A47002E85D3 /* Gilded Rose Kata.app */;
+			productReference = DB3B675C203C8A47002E85D3 /* GildedRoseKata.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DB3B6772203C8A47002E85D3 /* Gilded Rose KataTests */ = {
+		DB3B6772203C8A47002E85D3 /* GildedRoseKataTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB3B677F203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "Gilded Rose KataTests" */;
+			buildConfigurationList = DB3B677F203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "GildedRoseKataTests" */;
 			buildPhases = (
 				DB3B676F203C8A47002E85D3 /* Sources */,
 				DB3B6770203C8A47002E85D3 /* Frameworks */,
@@ -161,9 +161,9 @@
 			dependencies = (
 				DB3B6775203C8A47002E85D3 /* PBXTargetDependency */,
 			);
-			name = "Gilded Rose KataTests";
+			name = GildedRoseKataTests;
 			productName = "Gilded Rose KataTests";
-			productReference = DB3B6773203C8A47002E85D3 /* Gilded Rose KataTests.xctest */;
+			productReference = DB3B6773203C8A47002E85D3 /* GildedRoseKataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB3B6757203C8A47002E85D3 /* Build configuration list for PBXProject "Gilded Rose Kata" */;
+			buildConfigurationList = DB3B6757203C8A47002E85D3 /* Build configuration list for PBXProject "GildedRoseKata" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -201,8 +201,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB3B675B203C8A47002E85D3 /* Gilded Rose Kata */,
-				DB3B6772203C8A47002E85D3 /* Gilded Rose KataTests */,
+				DB3B675B203C8A47002E85D3 /* GildedRoseKata */,
+				DB3B6772203C8A47002E85D3 /* GildedRoseKataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,7 +260,7 @@
 /* Begin PBXTargetDependency section */
 		DB3B6775203C8A47002E85D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DB3B675B203C8A47002E85D3 /* Gilded Rose Kata */;
+			target = DB3B675B203C8A47002E85D3 /* GildedRoseKata */;
 			targetProxy = DB3B6774203C8A47002E85D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,7 +438,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gilded Rose Kata.app/Gilded Rose Kata";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GildedRoseKata.app/GildedRoseKata";
 			};
 			name = Debug;
 		};
@@ -457,14 +457,14 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Gilded Rose KataTests/Gilded Rose KataTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gilded Rose Kata.app/Gilded Rose Kata";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GildedRoseKata.app/GildedRoseKata";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB3B6757203C8A47002E85D3 /* Build configuration list for PBXProject "Gilded Rose Kata" */ = {
+		DB3B6757203C8A47002E85D3 /* Build configuration list for PBXProject "GildedRoseKata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB3B677A203C8A47002E85D3 /* Debug */,
@@ -473,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB3B677C203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "Gilded Rose Kata" */ = {
+		DB3B677C203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "GildedRoseKata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB3B677D203C8A47002E85D3 /* Debug */,
@@ -482,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB3B677F203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "Gilded Rose KataTests" */ = {
+		DB3B677F203C8A47002E85D3 /* Build configuration list for PBXNativeTarget "GildedRoseKataTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB3B6780203C8A47002E85D3 /* Debug */,

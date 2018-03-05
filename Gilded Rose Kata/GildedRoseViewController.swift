@@ -1,6 +1,6 @@
 //
 //  GildedRoseViewController.swift
-//  Gilded Rose Kata
+//  GildedRoseKata
 //
 //  Created by Blake Macnair on 2/20/18.
 //  Copyright © 2018 Blake Macnair. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ItemTableViewCell.swift
-//  Gilded Rose Kata
+//  GildedRoseKata
 //
 //  Created by Blake Macnair on 3/1/18.
 //  Copyright © 2018 Blake Macnair. All rights reserved.
