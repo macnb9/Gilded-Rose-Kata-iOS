@@ -11,11 +11,11 @@ import CoreData
 
 class GildedRose: NSObject {
     var items: [Item]
-    
+
     required init(items: [Item]) {
         self.items = items
     }
-    
+
     /// Updates the quality of each item in the Gilded Rose by a one-day increment
     public func updateQuality() {
 
@@ -45,7 +45,7 @@ class GildedRose: NSObject {
                                 items[i].quality = items[i].quality + 1
                             }
                         }
-                        
+
                         if (items[i].sellIn < 6) {
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1
@@ -54,11 +54,11 @@ class GildedRose: NSObject {
                     }
                 }
             }
-            
+
             if (items[i].name != "Sulfuras, Hand of Ragnaros") {
                 items[i].sellIn = items[i].sellIn - 1
             }
-            
+
             if (items[i].sellIn < 0) {
                 if (items[i].name != "Aged Brie") {
                     if (items[i].name != "Backstage passes to a TAFKAL80ETC concert") {

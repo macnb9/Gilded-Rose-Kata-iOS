@@ -20,12 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave, object: nil, queue: nil) { notification in
             guard let context = notification.object as? NSManagedObjectContext else { return }
             
-            /*if context.name != nil {
+            if context.name != nil {
                 if context.name == "background" {
                     self.persistentContainer.viewContext.mergeChanges(fromContextDidSave: notification)
                 }
-            } else*/ if context != self.persistentContainer.viewContext {
-                self.persistentContainer.viewContext.mergeChanges(fromContextDidSave: notification)
+            } else {
+                if context != self.persistentContainer.viewContext {
+                    self.persistentContainer.viewContext.mergeChanges(fromContextDidSave: notification)
+                }
             }
         }
     }
