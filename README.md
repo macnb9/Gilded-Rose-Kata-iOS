@@ -32,11 +32,8 @@ We've been handed this app from a previous developer and we need to make a few c
 1. Tapping "Next Day" doesn't increment our goods' quality or sellIn values.
 2. If we try to add a new item, it doesn't appear on our list of inventory.
 3. The overflow state in the ItemViewController seems to not be working right. We need the item titles to word wrap, not truncate off the end of the screen.
-4. We don't even know what's happening in the Gilded Rose class's updateQuality method; that really needs to be cleaned up.
-5. There might be some funny business happening in the unit tests as well...
-
-We wanted to make some UI improvements as well:
-
+4. There might be some funny business happening in the unit tests as well...
+5. We don't even know what's happening in the Gilded Rose class's updateQuality method; that really needs to be cleaned up.
 6. When the user opens an Add Item view, a keyboard should show up immediately for the name field so the user can start typing right away.
 7. We should add a feature to give the user a "Next"/"Done" button for the keypads when they're filling out Quality and SellIn values for a new item. Give the user a "Next" button on SellIn that changes focus to the Quality field, and a "Done" button on Quality that dismisses the keyboard and makes everything lose focus.
 
