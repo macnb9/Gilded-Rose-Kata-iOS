@@ -1,4 +1,5 @@
 # Gilded Rose Kata - Swift
+
 This is a Swift version of the Gilded Rose Kata code challenge, turned into an interface-based app.
 This Kata was originally created by [Terry Hughes](http://twitter.com/#!/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/).
 
@@ -25,6 +26,8 @@ We have recently signed a supplier of conjured items. This requires an update to
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 
+## What We Need to Do
+
 There are a few bugs abound from Leeroy's work still that will need to be cleaned up eventually:
 
 1. Tapping "Next Day" doesn't increment our goods' quality or sellIn values.
@@ -38,7 +41,12 @@ We wanted to make some UI improvements as well, once we take care of those bugs:
 1. When the user opens an Add Item view, a keyboard should show up immediately for the name field so the user can start typing right away.
 2. We should add a feature to give the user a "Next"/"Done" button for the keypads when they're filling out Quality and SellIn values for a new item. Give the user a "Next" button on SellIn that changes focus to the Quality field, and a "Done" button on Quality that dismisses the keyboard and makes everything lose focus.
 
-Feel free to make any changes to any file in the project and add any new code as long as everything still works correctly (you can make the UpdateQuality method static if you like).
+## Architecture
+
+This app uses a basic MVC architecure. The `Items` in the app are backed by Core Data. There are several methods in the `AppDelegate` that help with managing Core Data changes.
 
 ## How to use this repository
-Simply clone the repo onto your machine and open the project in Xcode.
+
+- Simply clone the repo onto your machine and open the project in Xcode.
+- Feel free to make any changes to any file in the project and add any new code as long as everything still works correctly (you can make the UpdateQuality method static if you like).
+
