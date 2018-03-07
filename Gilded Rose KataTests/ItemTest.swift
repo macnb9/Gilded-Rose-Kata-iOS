@@ -10,7 +10,7 @@ import XCTest
 @testable import GildedRoseKata
 
 class ItemTest: XCTestCase {
-    func testCOnfigure() {
+    func testConfigure() {
         let expectedName = "Excalibur"
         let expectedQuality = 42
         let expectedSellin = 24

@@ -17,21 +17,18 @@ class GildedRoseTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-
+        
         let createContext = AppDelegate.shared.persistentContainer.viewContext
-
+        
         items = [
             Item(name: "+5 Dexterity Vest", sellIn: 10, quality: 20, insertInto: createContext),
             Item(name: "Aged Brie", sellIn: 2, quality: 0, insertInto: createContext),
             Item(name: "Elixir of the Mongoose", sellIn: 5, quality: 7, insertInto: createContext),
             Item(name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80, insertInto: createContext),
-            Item(name: "Sulfuras, Hand of Ragnaros", sellIn: -1, quality: 80, insertInto: createContext),
             Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 20, insertInto: createContext),
-            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 10, quality: 49, insertInto: createContext),
-            Item(name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 5, quality: 49, insertInto: createContext),
             Item(name: "Conjured Mana Cake", sellIn: 3, quality: 6, insertInto: createContext)
         ]
-
+        
         AppDelegate.shared.saveContext(createContext)
         gildedRose = GildedRose(items: items!)
     }
@@ -42,7 +39,7 @@ class GildedRoseTest: XCTestCase {
                 return item
             }
         }
-
+        
         return nil
     }
     
@@ -52,20 +49,27 @@ class GildedRoseTest: XCTestCase {
         }
         
         guard let brie = findItem(named: "Aged Brie"),
-        let backStagePasses = findItem(named: "Backstage passes to a TAFKAL80ETC concert"),
-        let sulfuras = findItem(named: "Sulfuras, Hand of Ragnaros"),
-        let manaCake = findItem(named: "Conjured Mana Cake"),
-        let elixirMongoose = findItem(named: "Elixir of the Mongoose"),
+            let backStagePasses = findItem(named: "Backstage passes to a TAFKAL80ETC concert"),
+            let sulfuras = findItem(named: "Sulfuras, Hand of Ragnaros"),
+            let manaCake = findItem(named: "Conjured Mana Cake"),
+            let elixirMongoose = findItem(named: "Elixir of the Mongoose"),
             let dexterityVest = findItem(named: "+5 Dexterity Vest") else {
                 XCTFail()
                 return
         }
         
         XCTAssertEqual(brie.quality, 24)
+        XCTAssertEqual(brie.sellIn, -11)
         XCTAssertEqual(backStagePasses.quality, 44)
+        XCTAssertEqual(backStagePasses.sellIn, 2)
         XCTAssertEqual(sulfuras.quality, 80)
+        XCTAssertEqual(sulfuras.sellIn, 0)
         XCTAssertEqual(manaCake.quality, 0)
+        XCTAssertEqual(manaCake.sellIn, -10)
         XCTAssertEqual(elixirMongoose.quality, 0)
+        XCTAssertEqual(elixirMongoose.sellIn, -8)
         XCTAssertEqual(dexterityVest.quality, 4)
+        XCTAssertEqual(dexterityVest.sellIn, -3)
     }
 }
+
