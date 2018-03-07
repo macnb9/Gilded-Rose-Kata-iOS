@@ -20,10 +20,6 @@ Pretty simple, right? Well this is where it gets interesting:
 - "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
 - "Backstage passes", like aged brie, increase in Quality as their SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
 
-We have recently signed a supplier of conjured items. This requires an update to our system:
-
-- "Conjured" items degrade in Quality twice as fast as normal items
-
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 
 ## What We Need to Do
@@ -36,10 +32,11 @@ There are a few bugs abound from Leeroy's work still that will need to be cleane
 4. We don't even know what's happening in the Gilded Rose class's updateQuality method; that really needs to be cleaned up.
 5. There might be some funny business happening in the unit tests as well...
 
-We wanted to make some UI improvements as well, once we take care of those bugs:
+We wanted to make some extra improvements as well, once we take care of those bugs:
 
-1. When the user opens an Add Item view, a keyboard should show up immediately for the name field so the user can start typing right away.
-2. We should add a feature to give the user a "Next"/"Done" button for the keypads when they're filling out Quality and SellIn values for a new item. Give the user a "Next" button on SellIn that changes focus to the Quality field, and a "Done" button on Quality that dismisses the keyboard and makes everything lose focus.
+1. When updating quality, set "Conjured" items (items with a name including the word "conjured") to degrade in Quality twice as fast as normal items.
+2. When the user opens an Add Item view, a keyboard should show up immediately for the name field so the user can start typing right away.
+3. We should add a feature to give the user a "Next"/"Done" button for the keypads when they're filling out Quality and SellIn values for a new item. Give the user a "Next" button on SellIn that changes focus to the Quality field, and a "Done" button on Quality that dismisses the keyboard and makes everything lose focus.
 
 ## Architecture
 
